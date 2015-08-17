@@ -26,11 +26,9 @@ public class AndDownDemoActivity extends Activity {
     
     timings.addSplit("read raw");
     
-    AndDown converter=new AndDown();
-    
     timings.addSplit("instantiated AndDown");
     
-    String cooked=converter.markdownToHtml(raw);
+    String cooked=AndDown.markdownToHtml(raw);
     
     timings.addSplit("convert to HTML");
     
