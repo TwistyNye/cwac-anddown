@@ -9,11 +9,19 @@ extern "C" {
 #endif
 /*
  * Class:     com_commonsware_cwac_anddown_AndDown
- * Method:    markdown
+ * Method:    markdownToHtml
  * Signature: (Ljava/lang/String;)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdown
-  (JNIEnv *, jobject, jstring);
+JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2
+  (JNIEnv *, jclass, jstring);
+
+/*
+ * Class:     com_commonsware_cwac_anddown_AndDown
+ * Method:    markdownToHtml
+ * Signature: (Ljava/lang/String;I)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2I
+  (JNIEnv *, jclass, jstring, jint);
 
 #ifdef __cplusplus
 }
