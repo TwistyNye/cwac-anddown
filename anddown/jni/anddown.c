@@ -21,8 +21,14 @@
 #define INPUT_UNIT 64
 #define OUTPUT_UNIT 64
 
-JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml
+JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2
   (JNIEnv *env, jobject o, jstring raw) {
+
+  return(Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2I(env, o, raw, 0));
+}
+
+JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2I
+  (JNIEnv *env, jobject o, jstring raw, jint extensions) {
   struct hoedown_buffer *ib, *ob;
   jstring result;
   hoedown_renderer *renderer;
@@ -38,7 +44,7 @@ JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHt
   (*env)->ReleaseStringUTFChars(env, raw, str);
 
   renderer = hoedown_html_renderer_new(0, 0);
-  document = hoedown_document_new(renderer, 0, 16);
+  document = hoedown_document_new(renderer, extensions, 16);
 
   hoedown_document_render(document, ob, ib->data, ib->size);
   hoedown_document_free(document);
@@ -51,4 +57,3 @@ JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHt
 
   return(result);
 }
-
