@@ -19,21 +19,16 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := anddown
 LOCAL_SRC_FILES := \
 	anddown.c \
-	src/autolink.c \
-	src/buffer.c \
-	src/document.c \
-	src/escape.c \
-	src/html.c \
-	src/html_blocks.c \
-	src/html_smartypants.c \
-	src/stack.c \
-	src/version.c \
+	../../hoedown/src/autolink.c \
+	../../hoedown/src/buffer.c \
+	../../hoedown/src/document.c \
+	../../hoedown/src/escape.c \
+	../../hoedown/src/html_blocks.c \
+	../../hoedown/src/html.c \
+	../../hoedown/src/html_smartypants.c \
+	../../hoedown/src/stack.c \
+	../../hoedown/src/version.c
 
-LOCAL_C_INCLUDES := jni/src
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../hoedown/src
 
 include $(BUILD_SHARED_LIBRARY)
-
-#src/html_blocks.h: html_block_names.txt
-#	gperf -N find_block_tag -H hash_block_tag -C -c -E --ignore-case $^ > $@
-
-
