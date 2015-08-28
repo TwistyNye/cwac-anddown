@@ -21,13 +21,7 @@
 #define INPUT_UNIT 64
 #define OUTPUT_UNIT 64
 
-JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2
-  (JNIEnv *env, jobject o, jstring raw) {
-
-  return(Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2I(env, o, raw, 0));
-}
-
-JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2I
+JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml
   (JNIEnv *env, jobject o, jstring raw, jint extensions) {
   struct hoedown_buffer *ib, *ob;
   jstring result;

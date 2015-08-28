@@ -7,20 +7,14 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-/*
- * Class:     com_commonsware_cwac_anddown_AndDown
- * Method:    markdownToHtml
- * Signature: (Ljava/lang/String;)Ljava/lang/String;
- */
-JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2
-  (JNIEnv *, jclass, jstring);
-
+#undef com_commonsware_cwac_anddown_AndDown_EMPTY_MARKDOWN_EXTENSIONS
+#define com_commonsware_cwac_anddown_AndDown_EMPTY_MARKDOWN_EXTENSIONS 0L
 /*
  * Class:     com_commonsware_cwac_anddown_AndDown
  * Method:    markdownToHtml
  * Signature: (Ljava/lang/String;I)Ljava/lang/String;
  */
-JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml__Ljava_lang_String_2I
+JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHtml
   (JNIEnv *, jclass, jstring, jint);
 
 #ifdef __cplusplus
