@@ -30,6 +30,13 @@ public class AndDown
    *
    * @return generated HTML markup
    */
+  /*
+   * The earlier release of 0.2.4 left a zero in
+   * place of `extensions`.  This activation of the
+   * HoeDown 3.0.1 Extensions should merit a new
+   * version number, so that Projects using them
+   * should find release 0.2.5 or later.
+   */
   public static native String markdownToHtml (String raw, int extensions);
 
 
