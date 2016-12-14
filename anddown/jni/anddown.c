@@ -37,6 +37,13 @@ JNIEXPORT jstring JNICALL Java_com_commonsware_cwac_anddown_AndDown_markdownToHt
 
   (*env)->ReleaseStringUTFChars(env, raw, str);
 
+/*
+   * The earlier release of 0.2.4 left a zero in
+   * place of `extensions`.  This activation of the
+   * HoeDown 3.0.1 Extensions should merit a new
+   * version number, so that Projects using them
+   * should find release 0.2.5 or later.
+   */
   renderer = hoedown_html_renderer_new(0, 0);
   document = hoedown_document_new(renderer, extensions, 16);
 
